@@ -1,8 +1,8 @@
 title: Data Science Portfolio
-description: Insurance Charges Analysis using MLR and Quantile Regression
+description: Quantile Regression Analysis of Insurance Charges
 baseurl: ""
-url: "https://yourusername.github.io"
-author: Your Name
+url: "https://saisri27.github.io/linearregressionproject"
+author: Sai Sri Maddirala
 
 # Build settings
 markdown: kramdown
