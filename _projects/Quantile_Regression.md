@@ -20,10 +20,11 @@ You might be wondering, why insurance out of all things? Well, because let's be 
 For this analysis we considered BMI, age and smoking status because these had more effect on medical insurance charges. Let's first see what this regression depicts.Lets dive into Multiple Linear Regression model first.
 
 
-## What is Multiple Linear Regression ?
-Regression Model is one of the most widely used model where it estimates how several predictors together influence one outcome.
+## What is Multiple Linear Regression? 📊
 
-In our case,Our Model is :
+Multiple Linear Regression is one of the most widely used statistical models. It estimates how several predictors work together to influence one outcome variable.
+
+**Our Model:**
 $$Insurance = \beta_0 + \beta_1 \cdot Age + \beta_2 \cdot BMI + \beta_3 \cdot Smoking + \varepsilon$$
 
 Where:
@@ -34,10 +35,10 @@ Where:
 - $\varepsilon$ = Error term
 
 **Results:**
-- R-squared: 0.7509
-- Smoking increases charges by ~$23,848 on average
-- Each year of age adds ~$256 to charges
-- Each BMI unit adds ~$339 to charges
+- **R-squared:** 0.7509 (explains 75% of variance)
+- **Smoking effect:** Increases charges by ~$23,848 on average
+- **Age effect:** Each year adds ~$256 to charges  
+- **BMI effect:** Each BMI unit adds ~$339 to charges
 
 ### Interactive 3D Visualization
 
