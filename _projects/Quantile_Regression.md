@@ -10,17 +10,19 @@ by Sai Sri Maddirala, Yancy Castro *
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We want to be the voice and explain to you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. We will help you figure this out.
-Disclaimer: We spent a lot of time understanding. It is easy. No pressure.
+This is Sai Sri, Ari and Yancy! We want to be the voice and explain to you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+
+Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
+
 Before that, let's visit our dear friend Regression model. To not make this blog sound too technical, we considered a Kaggle dataset so it's easy to explain.
 
- This data deals with medical insurance charges. It looks at how personal details like age, BMI, gender, family size, and smoking habits, along with the region you live in, affect the cost of health insurance.
+This data deals with medical insurance charges. It looks at how personal details like age, BMI, gender, family size, and smoking habits, along with the region you live in, affect the cost of health insurance.
 You might be wondering, why insurance out of all things? Well, because let's be real you, me, and pretty much everyone else pays for it at some point, so we figured it's something we can all painfully relate to.
 
 For this analysis we considered BMI, age and smoking status because these had more effect on medical insurance charges. Let's first see what this regression depicts.Lets dive into Multiple Linear Regression model first.
 
 
-## What is Multiple Linear Regression? 📊
+## What is Multiple Linear Regression? 
 
 Multiple Linear Regression is one of the most widely used statistical models. It estimates how several predictors work together to influence one outcome variable.
 
@@ -34,26 +36,29 @@ Where:
 - $\beta_3$ = Smoking coefficient 
 - $\varepsilon$ = Error term
 
-**Results:**
-- **R-squared:** 0.7509 (explains 75% of variance)
-- **Smoking effect:** Increases charges by ~$23,848 on average
-- **Age effect:** Each year adds ~$256 to charges  
-- **BMI effect:** Each BMI unit adds ~$339 to charges
 
 ### Interactive 3D Visualization
 
-<iframe src="../plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="/linearregressionproject/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
 
-The visualization shows:
-- **Blue points & plane**: Non-smokers (lower charges)
-- **Red points & plane**: Smokers (higher charges)
-- Clear separation between smoking groups showing the dramatic impact of smoking on insurance costs
+In the above 3D Visualization, we mainly focussed on 3 Major predictors Age, BMI and smoking and analyzed their influence on insurance charges. The Blue plane represents non-smokers and the red plane represents smokers. The Difference between the planes above is hard to miss, The  plane with Smokers is higher than the plane with non smokers. Age and BMI steadily increases the predicted charges but smoking completely changes it . From this  3D graph it is evident that smoking causes increase in medical costs
 
-### 2. Quantile Regression Analysis
+With our trusty python and its libraries, we found that for every additional year of age , the average medical bill increases by $259 and for each extra unit of BMI will add $323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay $23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
+Also, Say no to smoking
 
-While MLR shows the average relationship, quantile regression reveals how the relationship varies across different charge levels:
+Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% or the highest 75%.To solve these issues ,Here comes ( drum roll....) our QUANTILE REGRESSION !!!
 
-<iframe src="../plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0"></iframe>
+This lets you understand the whole picture and in this blog we will work to understand about this.
+
+
+
+## Quantile Regression Analysis
+
+Quantile regression does exactly as its name says , it is mainly used to estimate the
+Distributional relationship of variables. Quantile regression can provide estimates for various quantiles such as 25th , 50th ,75th percentiles.
+
+
+<iframe src="/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0"></iframe>
 
 **Key Insights:**
 - **25th Percentile**: Minimal difference between smokers/non-smokers
