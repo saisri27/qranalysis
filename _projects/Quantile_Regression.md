@@ -41,7 +41,7 @@ Where:
 
 ### Interactive 3D Visualization
 
-<iframe src="/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="../plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
 
 The visualization shows:
 - **Blue points & plane**: Non-smokers (lower charges)
@@ -52,7 +52,7 @@ The visualization shows:
 
 While MLR shows the average relationship, quantile regression reveals how the relationship varies across different charge levels:
 
-<iframe src="/plots/quantile_regression.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="../plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0"></iframe>
 
 **Key Insights:**
 - **25th Percentile**: Minimal difference between smokers/non-smokers
