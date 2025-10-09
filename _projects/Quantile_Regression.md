@@ -39,7 +39,7 @@ Where:
 
 ### Interactive 3D Visualization
 
-<iframe src="/linearregressionproject/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="https://saisri27.github.io/linearregressionproject/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0"></iframe>
 
 In the above 3D Visualization, we mainly focussed on 3 Major predictors Age, BMI and smoking and analyzed their influence on insurance charges. The Blue plane represents non-smokers and the red plane represents smokers. The Difference between the planes above is hard to miss, The  plane with Smokers is higher than the plane with non smokers. Age and BMI steadily increases the predicted charges but smoking completely changes it . From this  3D graph it is evident that smoking causes increase in medical costs
 
@@ -58,7 +58,7 @@ Quantile regression does exactly as its name says , it is mainly used to estimat
 Distributional relationship of variables. Quantile regression can provide estimates for various quantiles such as 25th , 50th ,75th percentiles.
 
 
-<iframe src="/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0"></iframe>
 
 **Key Insights:**
 - **25th Percentile**: Minimal difference between smokers/non-smokers

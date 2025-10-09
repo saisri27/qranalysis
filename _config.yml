@@ -24,6 +24,10 @@ navigation:
   - title: About
     url: /about
 
+# Include files that Jekyll normally excludes
+include:
+  - plots/
+
 # Collections
 collections:
   projects:
