@@ -1,0 +1,37 @@
+title: Data Science Portfolio
+description: Insurance Charges Analysis using MLR and Quantile Regression
+baseurl: ""
+url: "https://yourusername.github.io"
+author: Your Name
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects
+  - title: About
+    url: /about
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude files
+exclude:
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - app.py
+  - requirements.txt
+  - start.sh
+  - *.ipynb
