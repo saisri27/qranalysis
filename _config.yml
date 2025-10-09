@@ -10,6 +10,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Math rendering
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
 # Navigation
 navigation:
   - title: Home
