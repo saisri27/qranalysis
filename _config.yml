@@ -34,4 +34,4 @@ exclude:
   - app.py
   - requirements.txt
   - start.sh
-  - *.ipynb
+  - "*.ipynb"
