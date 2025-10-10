@@ -217,7 +217,7 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
    
 
 
-- **Disadvantages of Quantile Regression**
+## Disadvantages of Quantile Regression
 
    (Dont judge even smart models  have their flaws)
 
@@ -232,3 +232,21 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 -  Inefficiency in High-Dimensional settings:
 
    Quantile regression may become inefficient when dealing with very High dimensional predictor spaces. without any appropriate regularization techniques , the model will be complicated.
+
+
+## References
+
+- **Professor Cody's lectures and notes** - Course materials and guidance
+
+- [**Unraveling the Mysteries of Quantile Regression**](https://juandelacalle.medium.com/unraveling-the-mysteries-of-quantile-regression-a-comprehensive-analysis-and-python-implementation-9850415cea2b) - Juan de la Calle (Medium)
+
+- [**Introduction to Quantile Regression**](https://blog.dailydoseofds.com/p/introduction-to-quantile-regression) - Daily Dose of Data Science
+
+- [**Errors in the Dependent Variable of Quantile Regression Models**](https://economics.mit.edu/sites/default/files/2022-09/Errors%20in%20the%20Dependent%20Variable%20of%20Quantile%20Regression%20Models.pdf) - MIT Economics Department
+
+- [**Koenker & Machado (1999) - Inference for Quantile Regression**](https://www.maths.usyd.edu.au/u/jchan/GLM/Koenker&Machado1999InferenceQuantileReg.pdf) - University of Sydney
+
+- [**Quantile Regression: Econometric Analysis**](http://www.econ.uiuc.edu/~roger/research/rq/QRJEP.pdf) - Roger Koenker, University of Illinois
+
+
+
