@@ -23,17 +23,33 @@ layout: default
   }
   
   /* Ensure content has proper margins and padding */
+  body {
+    background: #e3f2fd; /* Light blue background */
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .big-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #1565c0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #b3e5fc;
+  }
   .page-content {
-    padding-top: 30px !important;
+    padding-top: 10px !important;
     padding-bottom: 30px !important;
   }
-  
   .wrapper {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 30px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(21,101,192,0.08);
   }
-  
   .post-content {
     margin: 0 auto;
     max-width: 800px;
@@ -44,6 +60,7 @@ layout: default
 </style>
 
 <main class="page-content" aria-label="Content">
+  <div class="big-title">Quantile Regression</div>
   <div class="wrapper">
     <article class="post">
       <div class="post-content">
