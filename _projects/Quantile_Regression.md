@@ -10,7 +10,7 @@ by Sai Sri Maddirala,Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We want to be the voice and explain to you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
 
 Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
 
@@ -56,10 +56,10 @@ In our 3D Visualization, we mainly focussed on 3 Major predictors Age,BMI and sm
 
 Also, Say no to smoking !
 
-With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by $259 and each extra unit of BMI will add $323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay $23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
+With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by \$259 and each extra unit of BMI will add \$323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay $23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
 
 
-Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% or the highest 75%.
+Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges (those who pay the least) or the highest 75% of insurance charges (those who pay the most)?
 
 To solve these issues, here comes (drum roll....) our **QUANTILE REGRESSION**!!!
 
@@ -153,7 +153,8 @@ Not to brag but, Quantile regression has a few advantages over MLR.
 - Quantile Regression works even if the data is skewed or non-normal.
 
 
-Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance, Healthcare, Environment stuides and many more.
+Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, including Value-at-Risk(VaR) and Conditional Value-at-Risk(CVaR) , Healthcarenwhere it is used to analyze relationships between variables spread across entire distribution offering deeper insights into treatment effectiveness at various stages of a disease, Environment stuides and many more.
+
 
 ## How to evaluate them?
 
@@ -192,3 +193,8 @@ $$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
 
 For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
+
+## Common Pitfalls/mistakes
+
+
+-  
