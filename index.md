@@ -4,14 +4,14 @@ title: Quantile Regression Analysis
 ---
 
 <script>
-window.location.replace("/linearregressionproject/projects/quantile-regression/");
+window.location.replace("/qranalysis/projects/quantile-regression/");
 </script>
 
-<meta http-equiv="refresh" content="0; url=/linearregressionproject/projects/quantile-regression/">
+<meta http-equiv="refresh" content="0; url=/qranalysis/projects/quantile-regression/">
 
 # Redirecting...
 
-[Click here if not redirected automatically](/linearregressionproject/projects/quantile-regression/)
+[Click here if not redirected automatically](/qranalysis/projects/quantile-regression/)
 - Quantile regression analysis across different percentiles
 - Interactive Plotly visualizations
 - Statistical model comparison

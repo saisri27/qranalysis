@@ -173,7 +173,7 @@ Lower values mean better performance for that quantile.
 
 - **Pseudo R² (Koenker & Machado R²):**
 
-   Also, Koenker and Machado are the two statisticians who proposed this pseudo $R_{pseudo}^2$ that works for Quantile Regression, since the usual $R^2$ from OLS doesn’t apply here
+    Koenker and Machado are the two statisticians who proposed this pseudo $R_{pseudo}^2$ that works for Quantile Regression, since the usual $R^2$ from OLS doesn’t apply here.
    This evaluation is similar to the $R^2$  that we did in MLR but this based on quantiles
 
 $$R_{pseudo}^2 = 1 - \frac{\text{Quantile Loss of the fitted model}}{\text{Quantile Loss of a null model}}$$
@@ -194,7 +194,7 @@ $$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
 For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
 
-## Common Pitfalls/mistakes
+## Common Pitfalls and Mistakes
 
 
 -  **Ignoring measurement error in Dependent variable**:
