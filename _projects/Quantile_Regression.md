@@ -6,7 +6,7 @@ permalink: /projects/quantile-regression/
 
 # Quantile Regression Analysis
 
-by Sai Sri Maddirala,Jianing(Ari) Li, Yancy Castro 
+by Sai Sri Maddirala, Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
@@ -77,7 +77,7 @@ This approach allows us to understand how predictor effects vary across the enti
 
 ## The Math behind it 
 
-Generally, OLS minimizes the sum of squared residuals:
+Generally, OLS(Ordinary Least Squares)minimizes the sum of squared residuals:
 
 $$\hat{\theta}^{OLS} = \arg\min_{\theta} \sum_{i=1}^{n} (y_i - x_i^T \theta)^2$$
 
@@ -246,6 +246,11 @@ Quantile regression lets us see beyond the traditional linear regression. From o
 We had a lot of fun writing this blog , researching about it . They say “What speaks to you , sticks to you “ . This Definitely stuck with us , hope it does the same to youu 
 
 Thankyou for your time and patience
+
+We’d love to know your thoughts  and if you’d like to chat more or nerd out on data, hit us up on LinkedIn!
+
+ [Sai Sri Maddirala](https://www.linkedin.com/in/sai-sri-maddirala/) | [Jianing (Ari) Li](https://www.linkedin.com/in/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/)n/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/) 
+
 
 
 ## References
