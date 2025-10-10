@@ -1,8 +1,10 @@
 ---
 layout: project
-title: Quantile Regression
+title: Quantile Regression Analysis
 permalink: /projects/quantile-regression/
 ---
+
+# Quantile Regression Analysis
 
 by Sai Sri Maddirala, Yancy Castro *
 
