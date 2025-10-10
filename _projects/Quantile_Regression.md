@@ -14,7 +14,7 @@ This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the con
 
 Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
 
-Before that, let's visit our dear friend Regression model. To not make this blog sound too technical, we considered a Kaggle dataset so it's easy to explain.
+Before that, let's visit our dear friend Regression model. To not make this blog sound too technical, we considered a [Kaggle dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance) so it's easy to explain.
 
 This data deals with medical insurance charges. It looks at how personal details like age, BMI, gender, family size, and smoking habits, along with the region you live in, affect the cost of health insurance.
 You might be wondering, why insurance out of all things? Well, because let's be real you, me, and pretty much everyone else pays for it at some point, so we figured it's something we can all painfully relate to.
@@ -71,7 +71,7 @@ The Above image says in a simplest way the difference between Linear Regression 
 
 ## Quantile Regression Analysis
 
-Quantile regression does exactly as its name says , it is mainly used to estimate the distributional relationship of variables. Quantile regression can provide estimates for various quantiles such as 25th, 50th, 75th percentiles.
+Quantile regression does exactly as its name says , it is mainly used to estimate the distributional relationship of variables. Quantile regression can provide estimates for various quantiles such as 25<sup>th</sup>, 50<sup>th</sup>, 75<sup>th</sup> percentiles.
 
 This approach allows us to understand how predictor effects vary across the entire distribution of insurance charges, not just the average!
 
@@ -120,7 +120,7 @@ where:
 
 - Similarly, when $w$ < 0.5, the regression will move downwards and so fewer data points lie below it.
 
-using the interesting Quantile Regression mathematical approach, we can compute multiple regression models for each quantile to get in-depth analysis about the data. To be more precise, to get the 25th percentile model, we will train the model with w=0.25 and similarly for other percentiles.
+using the interesting Quantile Regression mathematical approach, we can compute multiple regression models for each quantile to get in-depth analysis about the data. To be more precise, to get the 25<sup>th</sup> percentile model, we will train the model with w=0.25 and similarly for other percentiles.
 
 
 Thanks to Python, its libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
@@ -203,7 +203,7 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
 - **Quantile Crossing**:
 
-   In general , the quantiles follow the order where  25th percentile line stays below the 50th percentile and 75th percentile line stays above 50th percentile , but sometimes these lines cross each other and the order changes . 25th percentile line can shift above 50th percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
+   In general , the quantiles follow the order where  25sup>th</sup> percentile line stays below the 50sup>th</sup> percentile and 75sup>th</sup>  percentile line stays above 50sup>th</sup>  percentile , but sometimes these lines cross each other and the order changes . 25sup>th</sup> percentile line can shift above 50sup>th</sup> percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
 
 - **Convergence Problems**:
    This problem mainly occurs when data makes it hard for the algorithm to find stable ,accurate solution. When I say , data makes it hard, it can be due to multiple reasons.
@@ -249,8 +249,7 @@ Thankyou for your time and patience
 
 We’d love to know your thoughts  and if you’d like to chat more or nerd out on data, hit us up on LinkedIn!
 
- [Sai Sri Maddirala](https://www.linkedin.com/in/sai-sri-maddirala/) | [Jianing (Ari) Li](https://www.linkedin.com/in/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/)n/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/) 
-
+ [Sai Sri Maddirala](https://www.linkedin.com/in/sai-sri-maddirala/) | [Jianing (Ari) Li](https://www.linkedin.com/in/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/)
 
 
 ## References
