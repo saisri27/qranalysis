@@ -15,15 +15,6 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-# Navigation
-navigation:
-  - title: Home
-    url: /
-  - title: Projects
-    url: /projects
-  - title: About
-    url: /about
-
 # Include files that Jekyll normally excludes
 include:
   - plots/
