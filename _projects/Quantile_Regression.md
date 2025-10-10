@@ -125,7 +125,7 @@ using the interesting Quantile Regression mathematical approach, we can compute 
 
 Thanks to Python, its libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
 
-<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
+<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="750px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 
 Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus mor e on the Red Smoker plane )
