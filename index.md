@@ -4,15 +4,14 @@ title: Quantile Regression Analysis
 ---
 
 <script>
-window.location.href = "/linearregressionproject/projects/quantile-regression/";
+window.location.replace("/linearregressionproject/projects/quantile-regression/");
 </script>
 
-# Redirecting to Quantile Regression Analysis...
+<meta http-equiv="refresh" content="0; url=/linearregressionproject/projects/quantile-regression/">
 
-If you are not redirected automatically, [click here](/linearregressionproject/projects/quantile-regression/).
+# Redirecting...
 
-**Key Features:**
-- 3D Multiple Linear Regression with interactive planes
+[Click here if not redirected automatically](/linearregressionproject/projects/quantile-regression/)
 - Quantile regression analysis across different percentiles
 - Interactive Plotly visualizations
 - Statistical model comparison
