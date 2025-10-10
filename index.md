@@ -1,17 +1,15 @@
 ---
 layout: default
-title: Data Science Portfolio
+title: Quantile Regression Analysis
 ---
 
-# Welcome to My Data Science Portfolio
+<script>
+window.location.href = "/linearregressionproject/projects/quantile-regression/";
+</script>
 
-Hi! I'm a data science enthusiast passionate about statistical modeling and data visualization. 
+# Redirecting to Quantile Regression Analysis...
 
-## Latest Project
-
-### [Quantile Regression: Insurance Charges Analysis](/projects/quantile-regression)
-
-Analyzing medical insurance charges using Multiple Linear Regression and Quantile Regression techniques. This project explores how age, BMI, and smoking status affect insurance costs through interactive 3D visualizations.
+If you are not redirected automatically, [click here](/projects/quantile-regression).
 
 **Key Features:**
 - 3D Multiple Linear Regression with interactive planes
