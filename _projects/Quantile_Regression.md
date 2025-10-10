@@ -2,11 +2,14 @@
 layout: project
 title: Quantile Regression Analysis
 permalink: /projects/quantile-regression/
+---ayout: project
+title: Quantile Regression Analysis
+permalink: /qr-analysis
 ---
 
 # Quantile Regression Analysis
 
-by Sai Sri Maddirala, Yancy Castro *
+by Sai Sri Maddirala,Jianing(Ari) Li, Yancy Castro 
 
 Hey Everyone!
 
@@ -111,16 +114,23 @@ where:
 ![Quantile Loss Function Visualization](https://saisri27.github.io/linearregressionproject/images/img_3.jpeg)
 
   The above loss function is also known as quantile loss, or pinball loss
+  -  when $w$(Quantile Level)  = 0.5, the line stays right in the middle , half the points are above, half are below.
+
+  - When $w$(Quantile Level) > 0.5, The model pays more attention to the points above the line. The Quantile regression line in the plot will move upwards, so larger portion of data lies below it.
+
+  - Similarly, when $w$< 0.5, The Regression will move downwards and so fewer data points lie below it.
+
+  Using the interesting Quantile Regression Mathematical approach, we can compute multiple regression models for each quantile to get indepth analysis about the data.To be more precise, to get 25th percentile mode, we will train the model with 0.25 and similarly for other percentiles.
+
+
+Thanks to Python, its libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
+
+<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
+
+
+Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus mor e on the Red Smoker plane )
 
 
 
 
 
-
-<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
-
-
----
-
-
-*View the complete code on [GitHub](https://github.com/saisri27/linearregressionproject)*

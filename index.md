@@ -4,12 +4,12 @@ title: Quantile Regression Analysis
 ---
 
 <script>
-window.location.href = "/linearregressionproject/qr-analysis/";
+window.location.href = "/linearregressionproject/projects/quantile-regression/";
 </script>
 
 # Redirecting to Quantile Regression Analysis...
 
-If you are not redirected automatically, [click here](/linearregressionproject/qr-analysis/).
+If you are not redirected automatically, [click here](/linearregressionproject/projects/quantile-regression/).
 
 **Key Features:**
 - 3D Multiple Linear Regression with interactive planes
