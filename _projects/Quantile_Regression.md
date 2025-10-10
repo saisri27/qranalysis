@@ -10,7 +10,19 @@ by Sai Sri Maddirala,Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+This is Sai Sri, Ari and Yancy! We w## Conclusion
+
+Whoaa! Finally! I know it's too much information but hey we learnt something new in depth.
+
+**What we learned:**
+
+Quantile regression lets us see beyond the traditional linear regression. From our insurance dataset, smoking amplifies costs drastically which means impact of smoking is not uniform, it becomes severe which Multiple linear regression completely misses. Quantile Regression works even when data is skewed, has outliers. It takes care of heteroskedasticity. However it's not perfect and we saw why.
+
+We had a lot of fun writing this blog, researching about it. They say "What speaks to you, sticks to you". This definitely stuck with us, hope it does the same to you!
+
+Thank you for your time and patience.
+
+---he voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
 
 Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
 
@@ -221,17 +233,31 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
    (Dont judge even smart models  have their flaws)
 
--  Requires Large sample size:
+-  **Requires Large sample size**:
 
     Because Quantile Regression estimates quantiles ranging from low to very high percentiles, we need large sample size for getting a reliable output. Smaller datasets have fewer data points at the tails which increases uncertainity.
 
--   Computational complexity:
+-   **Computational complexity**:
 
     Quantile regression is computationally complex because it needs to solve each quantile through repeated calculations , which makes it slower and harder to scale for large datasets.
 
--  Inefficiency in High-Dimensional settings:
+-  **Inefficiency in High-Dimensional settings**:
 
    Quantile regression may become inefficient when dealing with very High dimensional predictor spaces. without any appropriate regularization techniques , the model will be complicated.
+
+---
+
+## Conclusion
+
+Whoaa ! Finally ! I know its too much information but hey we learnt something new in depth . 
+
+We learnt,
+
+Quantile regression lets us see beyond the traditional linear regression. From our insurance dataset, smoking amplifies costs drastically which means impact of smoking is not uniform, it becomes severe which Multiple linear regression completely misses. Quantile Regression works even when data is skewed , has outliers . It takes care of heteroskedasticity .However its not perfect and we saw why ?
+
+We had a lot of fun writing this blog , researching about it . They say “What speaks to you , sticks to you “ . This Definitely stuck with us , hope it does the same to youu 
+
+Thankyou for your time and patience
 
 
 ## References
