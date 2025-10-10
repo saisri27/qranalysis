@@ -17,14 +17,33 @@ layout: default
     display: none !important;
   }
   
-  /* Ensure content starts at the top */
+  /* Ensure content has proper margins and padding */
   .page-content {
-    padding-top: 20px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  
+  .post-content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
   }
 </style>
 
-<article class="post">
-  <div class="post-content">
-    {{ content }}
+<main class="page-content" aria-label="Content">
+  <div class="wrapper">
+    <article class="post">
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
   </div>
-</article>
+</main>
