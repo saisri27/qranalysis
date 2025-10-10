@@ -56,7 +56,7 @@ In our 3D Visualization, we mainly focussed on 3 Major predictors Age,BMI and sm
 
 Also, Say no to smoking !
 
-With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by \$259 and each extra unit of BMI will add \$323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay $23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
+With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by \$259 and each extra unit of BMI will add \$323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay \$23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
 
 
 Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges i.e people who pay the least or the highest 75% of insurance charges i.e people who pay highest?
