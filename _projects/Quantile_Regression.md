@@ -10,7 +10,9 @@ by Sai Sri Maddirala, Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+This is Sai Sri, Ari and Yancy! We want to be thWe'd love to know your thoughts and if you'd like to chat more or nerd out on data, hit us up on LinkedIn!
+
+by [Sai Sri Maddirala](https://www.linkedin.com/in/sai-sri-maddirala/) | [Jianing (Ari) Li](https://www.linkedin.com/in/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/)oice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
 
 Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
 
@@ -46,7 +48,7 @@ Where:
 
 3. **Homoskedasticity**: The errors have constant variance 
 
-4. **Independence**: The errors (residuals) are independent of each other
+4. **Independence**: The errors are independent of each other
 
 ### Interactive 3D Visualization
 
