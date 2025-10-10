@@ -38,6 +38,16 @@ Where:
 - $\beta_3$ = Smoking coefficient 
 - $\varepsilon$ = Error term
 
+**Assumptions of MLR (Multiple Linear Regression):**
+
+1. **Linearity**: Each independent variable $X_i$ has a linear relationship with the dependent variable $Y$
+
+2. **Normality**: The errors follow a Normal (Gaussian) distribution
+
+3. **Homoskedasticity**: The errors have constant variance 
+
+4. **Independence**: The errors (residuals) are independent of each other
+
 ### Interactive 3D Visualization
 
 <iframe src="https://saisri27.github.io/linearregressionproject/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
@@ -52,6 +62,10 @@ With our trusty python and libraries , we found that for every additional year o
 Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% or the highest 75%.
 
 To solve these issues, here comes (drum roll....) our **QUANTILE REGRESSION**!!!
+
+![Quantile Regression Analysis](https://saisri27.github.io/linearregressionproject/images/img_1.jpeg)
+
+The Above image says in a simplest way the difference between Linear Regression and Qunatile regression.
 
 ---
 
@@ -86,16 +100,23 @@ w \cdot u & \text{if } u \geq 0 \\
 (w - 1) \cdot u & \text{if } u < 0
 \end{cases}$$
 
-where :
-y_i = 
-x_i
+where:
+- $y_i$ = Actual Observed value
+- $x_i$ = Features (Independent Variables)
+- $u$ = Residual (The Difference between actual and predicted value)
+- $w$ = Quantile Level
+- $\rho_w(u)$ = Quantile Loss Function (Also called as Pinball loss Function)
+
+
+![Quantile Loss Function Visualization](https://saisri27.github.io/linearregressionproject/images/img_3.jpeg)
+
+  The above loss function is also known as quantile loss, or pinball loss
 
 
 
 
-![Quantile Regression Analysis](https://saisri27.github.io/linearregressionproject/images/img_1.jpeg)
 
-The Above image says in a simplest way the difference between Linear Regression and Qunatile regression.
+
 <iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 
