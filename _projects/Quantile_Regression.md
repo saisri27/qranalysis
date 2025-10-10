@@ -50,7 +50,7 @@ Where:
 
 ### Interactive 3D Visualization
 
-<iframe src="https://saisri27.github.io/linearregressionproject/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
+<iframe src="https://saisri27.github.io/qranalysis/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 In our 3D Visualization, we mainly focussed on 3 Major predictors Age,BMI and smoking and analyzed their influence on insurance charges. The Blue plane represents non-smokers and the red plane represents smokers. The Difference between the planes above is hard to miss, The plane with smokers  is higher than the plane with non smokers. Age and BMI steadily increases the predicted charges but smoking completely changes it . By this 3D graph it is evident that smoking causes increase in medical costs.
 
@@ -63,7 +63,7 @@ Our Prediction model gave us a mean prediction i.e what is the expected cost giv
 
 To solve these issues, here comes (drum roll....) our **QUANTILE REGRESSION**!!!
 
-![Quantile Regression Analysis](https://saisri27.github.io/linearregressionproject/images/img_1.jpeg){: style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border: 2px solid #ddd; border-radius: 8px;"}
+![Quantile Regression Analysis](https://saisri27.github.io/qranalysis/images/img_1.jpeg){: style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border: 2px solid #ddd; border-radius: 8px;"}
 
 The Above image says in a simplest way the difference between Linear Regression and Qunatile regression.
 
@@ -108,7 +108,7 @@ where:
 - $\rho_w(u)$ = Quantile Loss Function (Also called as Pinball loss Function)
 
 
-![Quantile Loss Function Visualization](https://saisri27.github.io/linearregressionproject/images/img_3.jpeg){: style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border: 2px solid #ddd; border-radius: 8px;"}
+![Quantile Loss Function Visualization](https://saisri27.github.io/qranalysis/images/img_3.jpeg){: style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border: 2px solid #ddd; border-radius: 8px;"}
 
   The above loss function is also known as **quantile loss** or **pinball loss**.
 
@@ -125,7 +125,7 @@ using the interesting Quantile Regression mathematical approach, we can compute 
 
 Thanks to Python, its libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
 
-<iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="750px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
+<iframe src="https://saisri27.github.io/qranalysis/plots/quantile_3d_animation.html" width="100%" height="750px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 
 Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus more on the Red Smoker plane )
@@ -216,3 +216,19 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
    
 
+
+- **Disadvantages of Quantile Regression**
+
+   (Dont judge even smart models  have their flaws)
+
+-  Requires Large sample size:
+
+    Because Quantile Regression estimates quantiles ranging from low to very high percentiles, we need large sample size for getting a reliable output. Smaller datasets have fewer data points at the tails which increases uncertainity.
+
+-   Computational complexity:
+
+    Quantile regression is computationally complex because it needs to solve each quantile through repeated calculations , which makes it slower and harder to scale for large datasets.
+
+-  Inefficiency in High-Dimensional settings:
+
+   Quantile regression may become inefficient when dealing with very High dimensional predictor spaces. without any appropriate regularization techniques , the model will be complicated.
