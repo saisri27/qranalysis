@@ -205,4 +205,14 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
    In general , the quantiles follow the order where  25th percentile line stays below the 50th percentile and 75th percentile line stays above 50th percentile , but sometimes these lines cross each other and the order changes . 25th percentile line can shift above 50th percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
 
----
+- **Convergence Problems**:
+   This problem mainly occurs when data makes it hard for the algorithm to find stable ,accurate solution. When I say , data makes it hard, it can be due to multiple reasons.
+   
+   some of them are:
+
+   - Dataset is small and doesn't have enough variation. Estimating Extreme quantiles when there are few data points makes it harder for the algorithm to converge.  
+
+   - Multicollinearity ,it results in unstable coefficient estimates and makes it harder for the model to find accurate solutions
+
+   
+
