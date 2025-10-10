@@ -128,9 +128,68 @@ Thanks to Python, its libraries and amazing in-built functions,we have computed 
 <iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="750px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 
-Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus mor e on the Red Smoker plane )
+Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus more on the Red Smoker plane )
+
+The Lower quantile predicts how  age, BMI and smoking affects charges for people who pay less
+
+Higher Quantile predicts how these same factors  affect charge for people who pay more
+
+As, we move the slider from lower quantile to higher quantile, we can observe initially there is small gap between the smoker and non smoker planes and eventually increases a lot. Smoking doesnt just ass a fixed cost,it makes the increase in cost from age and BMI even higher, especially for the people who already tend to have high medical expenses.This is one of the key insight that quantile regression can capture but not MLR(Multiple linear Regression).
 
 
 
+## Benefits of Quantile Regression
 
+Not to brag but, Quantile regression has a few advantages over MLR.
+
+- The errors are treated differently for positive and negative errors depending on the quantile $w$. 
+
+- Instead of giving just one regression line like MLR, it gives multiple lines/planes , one for each quantile ,  which shows how the effect of predictors changes at different levels. 
+
+ - MLR assumes that the errors have constant variance (homoscedastic), while quantile regression can handle changing variance (heteroscedastic) too.
+
+- Quantile Regression is also less sensitive to outliers because it  uses absolute loss instead of squared loss.
+
+- Quantile Regression works even if the data is skewed or non-normal.
+
+
+Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance, Healthcare, Environment stuides and many more.
+
+## How to evaluate them?
+
+- **Quantile Loss (Pinball Loss):**
+
+$$L(w) = \frac{1}{n} \sum_{i=1}^{n} \rho_w(y_i - \hat{y}_i)$$
+
+where:
+
+$$\rho_w(u) = \begin{cases} 
+w \cdot u & \text{if } u \geq 0 \\
+(w - 1) \cdot u & \text{if } u < 0
+\end{cases}$$
+
+Lower values mean better performance for that quantile.
+
+- **Pseudo R² (Koenker & Machado R²):**
+
+Also, Koenker and Machado are the two statisticians who proposed this pseudo $R_{pseudo}^2$ that works for Quantile Regression, since the usual $R^2$ from OLS doesn’t apply here
+This evaluation is similar to the $R^2$  that we did in MLR but this based on quantiles
+
+$$R_{pseudo}^2 = 1 - \frac{\text{Quantile Loss of the fitted model}}{\text{Quantile Loss of a null model}}$$
+
+Also, have a look at this if you want to know more about how the $R_{pseudo}^2$ works:
+[Koenker & Machado (1999) - Inference for Quantile Regression](https://www.maths.usyd.edu.au/u/jchan/GLM/Koenker&Machado1999InferenceQuantileReg.pdf)
+
+- **Coverage Probability :**
+
+This Basically tells how well the Quantile regression model matches the actual distribution of the data . When a Quantile model is built for a certain quantile, the model is supposed to predict a line or a plane in which approximately Quanatile*100% of the actual data points fall below the line
+
+$$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
+
+I is an indicator function (which is =0 if true or false)
+- $y_i$ = actual value
+- $\hat{y}_i$ = predicted value from your quantile model
+
+For a well calibrated model:
+$$\text{Coverage}(w) \approx w$$
 
