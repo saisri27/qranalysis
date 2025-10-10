@@ -10,19 +10,7 @@ by Sai Sri Maddirala,Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We w## Conclusion
-
-Whoaa! Finally! I know it's too much information but hey we learnt something new in depth.
-
-**What we learned:**
-
-Quantile regression lets us see beyond the traditional linear regression. From our insurance dataset, smoking amplifies costs drastically which means impact of smoking is not uniform, it becomes severe which Multiple linear regression completely misses. Quantile Regression works even when data is skewed, has outliers. It takes care of heteroskedasticity. However it's not perfect and we saw why.
-
-We had a lot of fun writing this blog, researching about it. They say "What speaks to you, sticks to you". This definitely stuck with us, hope it does the same to you!
-
-Thank you for your time and patience.
-
----he voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
 
 Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
 
@@ -68,7 +56,7 @@ In our 3D Visualization, we mainly focussed on 3 Major predictors Age,BMI and sm
 
 Also, Say no to smoking !
 
-With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by \$259 and each extra unit of BMI will add \$323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay \$23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
+With our trusty python and libraries, we found that for every additional year of age, the average medical bill increases by **$259** and each extra unit of BMI will add **$323** to the insurance. But Smoking? Whoaa similar to what we have seen in the graph, on average smokers pay **$23,824** more than non-smokers. This says how much influence does smoking have on insurance charges.
 
 
 Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges i.e people who pay the least or the highest 75% of insurance charges i.e people who pay highest?
@@ -146,7 +134,7 @@ The Lower quantile predicts how  age, BMI and smoking affects charges for people
 
 Higher Quantile predicts how these same factors  affect charge for people who pay more
 
-As, we move the slider from lower quantile to higher quantile, we can observe initially there is small gap between the smoker and non smoker planes and eventually increases a lot. Smoking doesnt just ass a fixed cost,it makes the increase in cost from age and BMI even higher, especially for the people who already tend to have high medical expenses.This is one of the key insight that quantile regression can capture but not MLR(Multiple linear Regression).
+As, we move the slider from lower quantile to higher quantile, we can observe initially there is small gap between the smoker and non smoker planes and eventually increases a lot. Smoking doesnt just add a fixed cost,it makes the increase in cost from age and BMI even higher, especially for the people who already tend to have high medical expenses.This is one of the key insight that quantile regression can capture but not MLR(Multiple linear Regression).
 
 
 
