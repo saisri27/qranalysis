@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: clean
 title: Quantile Regression Analysis
 permalink: /projects/quantile-regression/
 ---
@@ -114,7 +114,7 @@ where:
 
 **Key Insights:**
 
-- When $w$ (Quantile Level) = 0.5, the line stays right in the middle - half the points are above, half are below.
+- When $w$ (Quantile Level) = 0.5, the line stays right in the middle with  half the points are above, half are below.
 
 - When $w$ (Quantile Level) > 0.5, the model pays more attention to the points above the line. The quantile regression line will move upwards, so a larger portion of data lies below it.
 
@@ -186,10 +186,9 @@ This Basically tells how well the Quantile regression model matches the actual d
 
 $$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
 
-I is an indicator function (which is =0 if true or false)
+- I is an indicator function (which is =0 if true or false)
 - $y_i$ = actual value
 - $\hat{y}_i$ = predicted value from your quantile model
 
-For a well calibrated model:
-$$\text{Coverage}(w) \approx w$$
+For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
