@@ -2,9 +2,6 @@
 layout: project
 title: Quantile Regression Analysis
 permalink: /projects/quantile-regression/
----ayout: project
-title: Quantile Regression Analysis
-permalink: /qr-analysis
 ---
 
 # Quantile Regression Analysis
@@ -123,7 +120,7 @@ where:
 
 - Similarly, when $w$ < 0.5, the regression will move downwards and so fewer data points lie below it.
 
-Using the interesting Quantile Regression mathematical approach, we can compute multiple regression models for each quantile to get in-depth analysis about the data. To be more precise, to get the 25th percentile model, we will train the model with w=0.25 and similarly for other percentiles.
+using the interesting Quantile Regression mathematical approach, we can compute multiple regression models for each quantile to get in-depth analysis about the data. To be more precise, to get the 25th percentile model, we will train the model with w=0.25 and similarly for other percentiles.
 
 
 Thanks to Python, its libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
