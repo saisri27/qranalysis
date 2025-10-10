@@ -4,8 +4,6 @@ title: Quantile Regression
 permalink: /projects/quantile-regression/
 ---
 
-# Quantile Regression 
-
 by Sai Sri Maddirala, Yancy Castro *
 
 Hey Everyone!
@@ -86,6 +84,10 @@ w \cdot u & \text{if } u \geq 0 \\
 (w - 1) \cdot u & \text{if } u < 0
 \end{cases}$$
 
+where :
+y_i = 
+x_i
+
 
 
 
@@ -94,111 +96,8 @@ w \cdot u & \text{if } u \geq 0 \\
 The Above image says in a simplest way the difference between Linear Regression and Qunatile regression.
 <iframe src="https://saisri27.github.io/linearregressionproject/plots/quantile_3d_animation.html" width="100%" height="500px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
-**Key Insights from the Animation:**
-- **25th Percentile**: Minimal difference between smokers/non-smokers
-- **50th Percentile**: Moderate smoking effect
-- **75th Percentile**: Large smoking effect amplified
-
-The animation clearly shows how the smoking effect becomes more pronounced at higher charge levels!
 
 ---
 
-## Mathematical Foundation
-
-### Quantile Loss Function
-
-For quantile $\tau \in (0,1)$, the loss function is:
-
-$$L_\tau(u) = u(\tau - I(u < 0))$$
-
-Where:
-- $u = y - x'\beta$ (residual)
-- $I(\cdot)$ is the indicator function
-
-This asymmetric loss function penalizes over-prediction and under-prediction differently.
-
----
-
-## Code Implementation
-
-```python
-import pandas as pd
-import plotly.graph_objects as go
-import statsmodels.api as sm
-from statsmodels.regression.quantile_regression import QuantReg
-
-# Load and prepare data
-df = pd.read_csv("insurance.csv")
-mlr_data = df[['age', 'bmi', 'smoker', 'charges']].copy()
-mlr_data['smoker_yes'] = (mlr_data['smoker'] == 'yes').astype(int)
-
-# Fit MLR model
-X = sm.add_constant(mlr_data[['age', 'bmi', 'smoker_yes']])
-y = mlr_data['charges']
-mlr_model = sm.OLS(y, X).fit()
-
-# Quantile regression for different percentiles
-quantiles = [0.25, 0.5, 0.75]
-for q in quantiles:
-    qr_model = QuantReg(y, X).fit(q=q)
-    # Analysis continues...
-```
-
----
-
-## Key Findings
-
-### 1. Smoking Effect Varies by Charge Level
-- **Low charges**: Minimal smoking impact
-- **High charges**: Smoking amplifies costs significantly
-
-### 2. Age Impact is Consistent
-- Linear relationship across all quantiles
-- Steady increase with age regardless of charge level
-
-### 3. BMI Shows Heterogeneous Effects
-- Stronger impact at higher charge quantiles
-- Suggests BMI matters more for expensive cases
-
----
-
-## Visualization Design Choices
-
-- **Color Consistency**: Blue for non-smokers, red for smokers across all plots
-- **Interactive Elements**: Hover details, 3D rotation, zoom capabilities
-- **Transparency**: Planes at 30% opacity to show data points behind
-- **Professional Styling**: Clean legends, proper labels, consistent fonts
-
----
-
-## Technical Implementation
-
-- **3D Surface Plots**: Generated meshgrid predictions for smooth planes
-- **Regression Planes**: Separate surfaces for smoker/non-smoker groups
-- **Export Functionality**: Standalone HTML files for web deployment
-- **Responsive Design**: Mobile-friendly visualizations
-
----
-
-## Conclusions
-
-This analysis demonstrates the power of combining traditional MLR with quantile regression:
-
-- **MLR** provides overall trends and average effects
-- **Quantile Regression** reveals how relationships change across the outcome distribution
-- **Smoking** is the strongest predictor, but its effect varies dramatically by charge level
-
-The interactive visualizations make complex statistical relationships accessible and provide intuitive understanding of the data patterns.
-
----
-
-## Next Steps
-
-- Extend analysis to include region and children variables
-- Implement machine learning models (Random Forest, XGBoost)
-- Add time series analysis if longitudinal data becomes available
-- Develop predictive calculator for new insurance quotes
-
----
 
 *View the complete code on [GitHub](https://github.com/saisri27/linearregressionproject)*
