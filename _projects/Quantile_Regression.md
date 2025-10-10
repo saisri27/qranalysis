@@ -59,7 +59,7 @@ Also, Say no to smoking !
 With our trusty python and libraries , we found that for every additional year of age , the average medical bill increases by \$259 and each extra unit of BMI will add \$323 to the insurance. But Smoking ? Whoaa similar to what we have seen in the graph ,on an average smokers pay $23,824 more than non-smokers.This says how much influence does smoking have on insurance charges.
 
 
-Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges (those who pay the least) or the highest 75% of insurance charges (those who pay the most)?
+Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges i.e people who pay the least or the highest 75% of insurance charges i.e people who pay highest?
 
 To solve these issues, here comes (drum roll....) our **QUANTILE REGRESSION**!!!
 
@@ -173,8 +173,8 @@ Lower values mean better performance for that quantile.
 
 - **Pseudo R² (Koenker & Machado R²):**
 
-Also, Koenker and Machado are the two statisticians who proposed this pseudo $R_{pseudo}^2$ that works for Quantile Regression, since the usual $R^2$ from OLS doesn’t apply here
-This evaluation is similar to the $R^2$  that we did in MLR but this based on quantiles
+   Also, Koenker and Machado are the two statisticians who proposed this pseudo $R_{pseudo}^2$ that works for Quantile Regression, since the usual $R^2$ from OLS doesn’t apply here
+   This evaluation is similar to the $R^2$  that we did in MLR but this based on quantiles
 
 $$R_{pseudo}^2 = 1 - \frac{\text{Quantile Loss of the fitted model}}{\text{Quantile Loss of a null model}}$$
 
@@ -183,7 +183,7 @@ Also, have a look at this if you want to know more about how the $R_{pseudo}^2$ 
 
 - **Coverage Probability :**
 
-This Basically tells how well the Quantile regression model matches the actual distribution of the data . When a Quantile model is built for a certain quantile, the model is supposed to predict a line or a plane in which approximately Quanatile*100% of the actual data points fall below the line
+   This Basically tells how well the Quantile regression model matches the actual distribution of the data . When a Quantile model is built for a certain quantile, the model is supposed to predict a line or a plane in which approximately Quanatile*100% of the actual data points fall below the line
 
 $$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
 
@@ -197,4 +197,12 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 ## Common Pitfalls/mistakes
 
 
--  
+-  **Ignoring measurement error in Dependent variable**:
+
+   While quantile regression handles random noise it doesn’t properly handle systematic measurement errors , these systematic errors can happen due to human error, faulty sensor , rounding etc .This causes severe bias is coefficient estimates. This causes distortion and the model pulls all quantile lines/planes towards the median messing up the actual data pattern which leads to worng interpretation
+
+- **Quantile Crossing**:
+
+   In general , the quantiles follow the order where  25th percentile line stays below the 50th percentile and 75th percentile line stays above 50th percentile , but sometimes these lines cross each other and the order changes . 25th percentile line can shift above 50th percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
+
+---
