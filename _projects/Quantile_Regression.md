@@ -136,6 +136,13 @@ Higher Quantile predicts how these same factors  affect charge for people who pa
 
 As, we move the slider from lower quantile to higher quantile, we can observe initially there is small gap between the smoker and non smoker planes and eventually increases a lot. Smoking doesnt just add a fixed cost,it makes the increase in cost from age and BMI even higher, especially for the people who already tend to have high medical expenses.This is one of the key insight that quantile regression can capture but not MLR(Multiple linear Regression).
 
+It was so fascinating to see how people with same age and BMI might have different insurance charges due to other factors and quantile regression was able to reveal that inequality by showing how the predictors influence at different percentiles .
+
+
+Imagine being able to visualize different variables beyond the ones we’ve chosen, you’d get a much clearer picture of what quantile regression really is. Well, we’ve got you covered. We’ve built a site that lets you experiment with various variables and responses so you can see firsthand how quantile regression changes based on your input.
+
+Have a look at this :
+
 
 
 ## Benefits of Quantile Regression
@@ -153,7 +160,7 @@ Not to brag but, Quantile regression has a few advantages over MLR.
 - Quantile Regression works even if the data is skewed or non-normal.
 
 
-Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, including Value-at-Risk(VaR) and Conditional Value-at-Risk(CVaR) , Healthcarenwhere it is used to analyze relationships between variables spread across entire distribution offering deeper insights into treatment effectiveness at various stages of a disease, Environment stuides and many more.
+Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, including Value-at-Risk(VaR) and Conditional Value-at-Risk(CVaR) , Healthcare , where it is used to analyze relationships between variables spread across entire distribution offering deeper insights into treatment effectiveness at various stages of a disease, Environment stuides and many more.
 
 
 ## How to evaluate them?
@@ -203,7 +210,7 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
 - **Quantile Crossing**:
 
-   In general , the quantiles follow the order where  25sup>th</sup> percentile line stays below the 50sup>th</sup> percentile and 75sup>th</sup>  percentile line stays above 50sup>th</sup>  percentile , but sometimes these lines cross each other and the order changes . 25sup>th</sup> percentile line can shift above 50sup>th</sup> percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
+   In general , the quantiles follow the order where  25<sup>th</sup> percentile line stays below the 50<sup>th</sup> percentile and 75<sup>th</sup>  percentile line stays above 50<sup>th</sup>  percentile , but sometimes these lines cross each other and the order changes . 25<sup>th</sup> percentile line can shift above 50<sup>th</sup> percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
 
 - **Convergence Problems**:
    This problem mainly occurs when data makes it hard for the algorithm to find stable ,accurate solution. When I say , data makes it hard, it can be due to multiple reasons.
@@ -264,7 +271,9 @@ We’d love to know your thoughts  and if you’d like to chat more or nerd out 
 
 - [**Koenker & Machado (1999) - Inference for Quantile Regression**](https://www.maths.usyd.edu.au/u/jchan/GLM/Koenker&Machado1999InferenceQuantileReg.pdf) - University of Sydney
 
-- [**Quantile Regression: Econometric Analysis**](http://www.econ.uiuc.edu/~roger/research/rq/QRJEP.pdf) - Roger Koenker, University of Illinois
+- Yu, K., & Moyeed, R. A. (2001). Bayesian quantile regression. Statistics & Probability Letters, 54(4), 437–447.
+- Kozumi, H., & Kobayashi, G. (2011). Gibbs sampling methods for Bayesian quantile regression. Journal of Statistical Computation and Simulation, 81(11), 1565–1578.
+- Gelman, A. et al. (2013). Bayesian Data Analysis (3rd ed.). CRC Press.
 
 
 
