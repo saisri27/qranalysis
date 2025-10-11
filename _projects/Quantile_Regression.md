@@ -139,9 +139,6 @@ As, we move the slider from lower quantile to higher quantile, we can observe in
 It was so fascinating to see how people with same age and BMI might have different insurance charges due to other factors and quantile regression was able to reveal that inequality by showing how the predictors influence at different percentiles .
 
 
-Imagine being able to visualize different variables beyond the ones we’ve chosen, you’d get a much clearer picture of what quantile regression really is. Well, we’ve got you covered. We’ve built a site that lets you experiment with various variables and responses so you can see firsthand how quantile regression changes based on your input.
-
-Have a look at this :
 
 
 
@@ -160,7 +157,7 @@ Not to brag but, Quantile regression has a few advantages over MLR.
 - Quantile Regression works even if the data is skewed or non-normal.
 
 
-Quantile Regression is widely used to deal with Real world data, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, including Value-at-Risk(VaR) and Conditional Value-at-Risk(CVaR) , Healthcare , where it is used to analyze relationships between variables spread across entire distribution offering deeper insights into treatment effectiveness at various stages of a disease, Environment stuides and many more.
+Quantile Regression is so popular in real world applications, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, , Healthcare , where it is used to understand treatment effects across different patient groups, Environment stuides and many more.
 
 
 ## How to evaluate them?
@@ -240,8 +237,52 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
    Quantile regression may become inefficient when dealing with very High dimensional predictor spaces. without any appropriate regularization techniques , the model will be complicated.
 
----
 
+## Topic Extension
+
+Let’s bridge everything and look beyond. 
+
+Ordinary Least Squares minimized the average squared error to produces a single point estimate of $\hat{\beta}$. Since $\hat{y}$ is there’s no room for uncertainty. 
+
+For our insurance data:
+OLS: 
+$$
+\text{Insurance} = -11{,}676.83 + 323 \times \text{BMI} + 259.55 \times \text{Age} + 23{,}823.68 \times \text{Smoker}
+$$
+This gives us a mean estimate and we accept it as a baseline. 
+
+Quantile Regression minimized a weighted absolute error. Each $\tau$ gives us one fixed quantile line $\hat{\beta}(\tau)$.  But again, no expression of uncertainty.
+
+Quantile Regression:
+
+High cost patients in 90<sup>th</sup> quantile for instance, BMI has a stronger effect. And now we are upgraded from one line trend to have the quantile estimate( e.g 25%, 75%).
+
+Since both OLS and Quantile Regression are deterministic, meaning that we will always get the same estimates even adding new data. So still, we don’t know how uncertain we are. The magic with Bayesian Quantile Regression is that it turns deterministic to probabilistic. It says “since we don’t know about the true $\beta$. We should treat beta as a random variable!” This is where the introducing our belief part comes into play. And it also allows us to update our belief after getting more evidences.
+
+
+Bayesian Quantile Regression:
+
+1. Set our prior (before seeing the data): smokers have higher charges:
+
+    [ $\beta_{\text{smoker}} \sim \text{Normal}(5000, 2000^2)$ ]
+
+
+2. When we see the actual data (Y, X), Bayes updates belief:
+
+   $P(\beta \mid X, Y) \propto P(Y \mid X, \beta) \, P(\beta)$
+
+
+
+
+3.  The visualizing the uncertainty meaning we sample the posterior draws to get posterior distribution mean and credible interval. 
+
+    $p(\beta \mid X, Y, \tau)$
+
+Finally we get the distribution that actually captures both trend and uncertainty. 
+
+Let’s wrap this up by thinking about the comparison. Quantile Regression expands linear regression by estimating several instead of one trend line, with each represents different quantile. It helps us better understanding how predictors affect different part of outcome that across quantile. Even though we don’t know how confident we are about the effects…
+
+Bayesian Quantile Regression allows us to include prior or you can say domain knowledge. When combining prior with observed data, our prior updated to posterior.  Bayesian Quantile Regression balances our prior belief with empirical evidence. At this stage, the result captures distributional difference across quantile. The uncertainty captured through posterior variance. We are finally gaining our confidence and the model interpretability. And this is the magic with Bayesian Quantile Regression.
 ## Conclusion
 
 Whoaa ! Finally ! I know its too much information but hey we learnt something new in depth . 
@@ -271,9 +312,7 @@ We’d love to know your thoughts  and if you’d like to chat more or nerd out 
 
 - [**Koenker & Machado (1999) - Inference for Quantile Regression**](https://www.maths.usyd.edu.au/u/jchan/GLM/Koenker&Machado1999InferenceQuantileReg.pdf) - University of Sydney
 
-- Yu, K., & Moyeed, R. A. (2001). Bayesian quantile regression. Statistics & Probability Letters, 54(4), 437–447.
-- Kozumi, H., & Kobayashi, G. (2011). Gibbs sampling methods for Bayesian quantile regression. Journal of Statistical Computation and Simulation, 81(11), 1565–1578.
-- Gelman, A. et al. (2013). Bayesian Data Analysis (3rd ed.). CRC Press.
+
 
 
 
