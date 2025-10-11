@@ -2,7 +2,7 @@
 
 
 Hey everyone! 
-In this blog, we’ve explored **Quantile Regression** — its mathematical foundation, how it differs from **Multiple Linear Regression**, key **evaluation metrics**, **advantages**, **disadvantages**, and common **pitfalls/mistakes**.  
+In this blog, we’ve explored **Quantile Regression** , its mathematical foundation, how it differs from **Multiple Linear Regression**, key **evaluation metrics**, **advantages**, **disadvantages**, and common **pitfalls/mistakes**.  
 As a bonus, we’ve also discussed **Bayesian Quantile Regression** and how it introduces uncertainty into the model.
 
 You can read the full blog here:  
