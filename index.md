@@ -18,12 +18,3 @@ window.location.replace("/qranalysis/projects/quantile-regression/");
 
 [View Project →](/projects/insurance-analysis)
 
----
-
-## Skills & Technologies
-
-- **Languages:** Python, R, SQL
-- **Libraries:** Pandas, NumPy, Scikit-learn, Statsmodels, Plotly
-- **Visualization:** Matplotlib, Seaborn, Plotly, D3.js
-- **Statistics:** Regression Analysis, Hypothesis Testing, Time Series
-- **Tools:** Jupyter, Git, Docker
