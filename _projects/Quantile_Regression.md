@@ -10,17 +10,19 @@ by Sai Sri Maddirala, Jianing(Ari) Li, Yancy Castro
 
 Hey Everyone!
 
-This is Sai Sri, Ari and Yancy! We want to be the voice and explain  you the concept of Quantile Regression. Hold on, it's not as difficult as it sounds. we will help you figure this out.
+TThis is Sai Sri, Ari, and Yancy! We want to be the voice that explains the concept of Quantile Regression. Hold on — it’s not as difficult as it sounds. We’ll help you figure it out.
 
-Disclaimer: We spent a lot of time understanding. It is easy. No pressure (haha)
+Disclaimer: We spent a lot of time understanding this ourselves ,it’s actually easy once it clicks. No pressure (haha)!
 
-Before that, let's visit our dear friend Regression model. To not make this blog sound too technical, we considered a [Kaggle dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance) so it's easy to explain.
+Before that, let’s revisit our dear friend , the Regression model.To keep things simple and not overly technical, we used a[Kaggle dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance) so it's easer to explain.
 
-This data deals with medical insurance charges. It looks at how personal details like age, BMI, gender, family size, and smoking habits, along with the region you live in, affect the cost of health insurance.
-You might be wondering, why insurance out of all things? Well, because let's be real you, me, and pretty much everyone else pays for it at some point, so we figured it's something we can all painfully relate to.
+This dataset deals with medical insurance charges. It explores how personal factors like age, BMI, gender, family size, and smoking habits, along with the region you live in, affect the cost of health insurance.
 
-For this analysis we considered BMI, age and smoking status because these had more effect on medical insurance charges. Let's first see what this regression depicts.Lets dive into Multiple Linear Regression model first.
+You might be wondering, why insurance, of all things? Well, let’s be real - you, me, and pretty much everyone else pays for it at some point, so we figured it’s something we can all painfully relate to.
+For this analysis, we focused on BMI, age, and smoking status, since these have the greatest effect on medical insurance charges.
 
+Let’s first see what this regression depicts.
+Now, let’s dive into the Multiple Linear Regression model.
 ---
 
 ## What is Multiple Linear Regression? 
@@ -52,28 +54,31 @@ Where:
 
 <iframe src="https://saisri27.github.io/qranalysis/plots/mlr_3d_visualization.html" width="100%" height="600px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
-In our 3D Visualization, we mainly focused on 3 Major predictors Age,BMI and smoking and analyzed their influence on insurance charges. The Blue plane represents non-smokers and the red plane represents smokers. The Difference between the planes above is hard to miss, The plane with smokers  is higher than the plane with non smokers. Age and BMI steadily increases the predicted charges but smoking completely changes it . By this 3D graph it is evident that smoking causes increase in medical costs.
+In our 3D visualization, we focused on three main predictors: age, BMI, and smoking, and analyzed how they influence insurance charges. The blue plane represents non-smokers, while the red plane represents smokers.
+
+The difference between the two planes is easy to see—the plane for smokers is higher than the one for non-smokers. Age and BMI both steadily increase the predicted charges, but smoking changes everything. From this 3D graph, it’s clear that smoking leads to higher medical costs.
 
 Also, Say no to smoking !
 
-With our trusty python and libraries, we found that for every additional year of age, the average medical bill increases by **$259** and each extra unit of BMI will add **$323** to the insurance. But Smoking? Whoaa similar to what we have seen in the graph, on average smokers pay **$23,824** more than non-smokers. This says how much influence does smoking have on insurance charges.
+With our trusty Python and libraries, we found that for every additional year of age, the average medical bill increases by **$259** and each extra unit of BMI will add **$323** to the insurance. But smoking? Whoa! Similar to what we saw in the graph, on average, smokers pay **$23,824** more than non-smokers. This shows just how much influence smoking has on insurance charges.
 
 
-Our Prediction model gave us a mean prediction i.e what is the expected cost given these factors . But what if we want to know more than average? What if we want a deeper analysis like how does this costs vary across people in the lowest 25% of insurance charges i.e people who pay the least or the highest 75% of insurance charges i.e people who pay highest?
+Our prediction model gave us a mean prediction — in other words, the expected cost given these factors. But what if we want to know more than just the average? What if we want a deeper analysis, like how these costs vary among people in the lowest 25% of insurance charges (those who pay the least) or the highest 75% (those who pay the most)?
 
-To solve these issues, here comes (drum roll....) our **QUANTILE REGRESSION**!!!
+To solve these questions, here comes (drum roll...) our QUANTILE REGRESSION!!!
 
 ![Quantile Regression Analysis](https://saisri27.github.io/qranalysis/images/img_1.jpeg){: style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border: 2px solid #ddd; border-radius: 8px;"}
 
-The Above image says in a simplest way the difference between Linear Regression and Qunatile regression.
+The image above shows, in the simplest way, the difference between Linear Regression and Quantile Regression.
 
 ---
 
 ## Quantile Regression Analysis
 
-Quantile regression does exactly as it's name says , it is mainly used to estimate the distributional relationship of variables. Quantile regression can provide estimates for various quantiles such as 25<sup>th</sup>, 50<sup>th</sup>, 75<sup>th</sup> percentiles.
+Quantile regression does exactly what its name suggests. It is mainly used to estimate the distributional relationship between variables. Quantile regression can provide estimates for different quantiles, such as the 25<sup>th</sup>, 50<sup>th</sup>, and 75<sup>th</sup> percentiles.
 
-This approach allows us to understand how predictor effects vary across the entire distribution of insurance charges, not just the average!
+
+This approach helps us understand how the effects of each predictor change across the entire range of insurance charges, not just the average!
 
 ## The Math behind it 
 
@@ -81,7 +86,7 @@ Generally, OLS(Ordinary Least Squares)minimizes the sum of squared residuals:
 
 $$\hat{\theta}^{OLS} = \arg\min_{\theta} \sum_{i=1}^{n} (y_i - x_i^T \theta)^2$$
 
-This treats positive and negative errors equally, both sides are penalized the same.
+This approach treats positive and negative errors equally both sides are penalized the same.
 
 That’s why OLS gives us the mean line, where positive and negative residuals balance out to zero.
 
@@ -114,31 +119,30 @@ where:
 
 **Key Insights:**
 
-- When $w$ (Quantile Level) = 0.5, the line stays right in the middle with  half the points are above, half are below.
+- When $w$ (quantile level) = 0.5, the line stays right in the middle,  half of the points are above it, and half are below.
 
-- When $w$ (Quantile Level) > 0.5, the model pays more attention to the points above the line. The quantile regression line will move upwards, so a larger portion of data lies below it.
+- When $w$ (quantile level) > 0.5, the model pays more attention to the points above the line. As a result, the quantile regression line shifts upward, so a larger portion of the data lies below it.
 
-- Similarly, when $w$ < 0.5, the regression will move downwards and so fewer data points lie below it.
+- Similarly, when $w$ < 0.5, the regression line moves downward, and fewer data points lie below it.
 
-using the interesting Quantile Regression mathematical approach, we can compute multiple regression models for each quantile to get in-depth analysis about the data. To be more precise, to get the 25<sup>th</sup> percentile model, we will train the model with w=0.25 and similarly for other percentiles.
+Using the Quantile Regression approach, we can build separate regression models for different quantiles to gain a deeper understanding of the data. For example, to obtain the 25<sup>th</sup> percentile model, we train the model with $w = 0.25$, and similarly for other percentiles.
 
 
-Thanks to Python, it's libraries and amazing in-built functions,we have computed Quantile Regression model and this is how the graph looks like 
+Thanks to Python, its libraries, and amazing built-in functions, we were able to compute the Quantile Regression model and here’s how the graph looks!
 
 <iframe src="https://saisri27.github.io/qranalysis/plots/quantile_3d_animation.html" width="100%" height="750px" frameborder="0" style="border: 2px solid #ddd; border-radius: 8px;"></iframe>
 
 
-Feel free to move the slider and observe how quantile change shifts the planes (Hint: Focus more on the Red Smoker plane )
+Feel free to move the slider and see how changing the quantile shifts the planes. (Hint: focus more on the red smoker plane!)
 
-The Lower quantile predicts how  age, BMI and smoking affects charges for people who pay less
+The lower quantile shows how age, BMI, and smoking affect charges for people who pay less.
+The higher quantile shows how these same factors affect charges for people who pay more.
 
-Higher Quantile predicts how these same factors  affect charge for people who pay more
+As we move the slider from the lower quantile to the higher quantile, we can see that the gap between the smoker and non-smoker planes starts small but gradually becomes much larger. Smoking doesn’t just add a fixed cost,it makes the increase in charges from age and BMI even greater, especially for people who already tend to have high medical expenses. This is one of the key insights that Quantile Regression can capture, but Multiple Linear Regression (MLR) cannot.
 
-As, we move the slider from lower quantile to higher quantile, we can observe initially there is small gap between the smoker and non smoker planes and eventually increases a lot. Smoking doesnt just add a fixed cost,it makes the increase in cost from age and BMI even higher, especially for the people who already tend to have high medical expenses.This is one of the key insight that quantile regression can capture but not MLR(Multiple linear Regression).
+It was fascinating to see how people with the same age and BMI can have different insurance charges due to other factors. Quantile regression revealed this inequality by showing how the predictors influence costs at different percentiles.
 
-It was so fascinating to see how people with same age and BMI might have different insurance charges due to other factors and quantile regression was able to reveal that inequality by showing how the predictors influence at different percentiles .
-
-Imagine being able to visualize different variables beyond the ones we’ve chosen , you’d get a much clearer picture of what quantile regression really is. Well, we’ve got you covered. We’ve built a site that lets you experiment with various variables and responses so you can see firsthand how quantile regression changes based on your input
+Imagine being able to visualize different variables beyond the ones we’ve chosen — you’d get an even clearer picture of what Quantile Regression really is. Well, we’ve got you covered! We built a site that lets you experiment with different variables and responses so you can see firsthand how Quantile Regression changes based on your input.
 
 Try it out: [Interactive Quantile Regression App](https://aquamarine-cuchufli-c3b867.netlify.app/)
 
@@ -146,20 +150,20 @@ Try it out: [Interactive Quantile Regression App](https://aquamarine-cuchufli-c3
 
 ## Benefits of Quantile Regression
 
-Not to brag but, Quantile regression has a few advantages over MLR.
+Not to brag, but Quantile Regression has a few advantages over MLR.
 
-- The errors are treated differently for positive and negative errors depending on the quantile $w$. 
+- The errors are treated differently for positive and negative values, depending on the quantile level $w$.
 
-- Instead of giving just one regression line like MLR, it gives multiple lines/planes , one for each quantile ,  which shows how the effect of predictors changes at different levels. 
+- Instead of giving just one regression line like MLR, it provides multiple lines or planes, one for each quantile, showing how the effect of the predictors changes at different levels.
 
- - MLR assumes that the errors have constant variance (homoscedastic), while quantile regression can handle changing variance (heteroscedastic) too.
+ - MLR assumes that the errors have constant variance (homoscedastic), while quantile regression can also handle changing variance (heteroscedastic).
 
-- Quantile Regression is also less sensitive to outliers because it  uses absolute loss instead of squared loss.
+- Quantile regression is also less sensitive to outliers because it uses absolute loss instead of squared loss.
 
-- Quantile Regression works even if the data is skewed or non-normal.
+- Quantile regression works even when the data is skewed or not normally distributed.
 
 
-Quantile Regression is so popular in real world applications, especially when we want to understand how predictors behave not just the average, also in the fields where extreme values or uneven data distributions matter such as in Finance where it is used to predict financial risk, , Healthcare , where it is used to understand treatment effects across different patient groups, Environmental stuides and many more.
+Quantile regression is widely used in real-world applications, especially when we want to understand how predictors behave beyond the average. It is particularly useful in fields where extreme values or uneven data distributions matter , such as finance, where it helps predict financial risk; healthcare, where it helps study treatment effects across different patient groups; and environmental studies, among many others.
 
 
 ## How to evaluate them?
@@ -189,7 +193,7 @@ Also, have a look at this if you want to know more about how the $R_{pseudo}^2$ 
 
 - **Coverage Probability :**
 
-   This Basically tells how well the Quantile regression model matches the actual distribution of the data . When a Quantile model is built for a certain quantile, the model is supposed to predict a line or a plane in which approximately Quantile*100% of the actual data points fall below the line
+   This essentially shows how well the Quantile Regression model matches the actual distribution of the data. When a Quantile model is built for a certain quantile, it is expected to predict a line or plane where approximately quantile × 100% of the actual data points fall below it.
 
 $$\text{Coverage}(w) = \frac{1}{n} \sum_{i=1}^{n} I(y_i \leq \hat{y}_i)$$
 
@@ -205,20 +209,21 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
 -  **Ignoring measurement error in Dependent variable**:
 
-   While quantile regression handles random noise it doesn’t properly handle systematic measurement errors , these systematic errors can happen due to human error, faulty sensor , rounding etc .This causes severe bias is coefficient estimates. This causes distortion and the model pulls all quantile lines/planes towards the median messing up the actual data pattern which leads to wrong interpretation
+   While quantile regression can handle random noise, it doesn’t properly account for systematic measurement errors. These errors can occur due to human mistakes, faulty sensors, rounding, and similar issues. Such errors cause severe bias in the coefficient estimates, leading to distortion in the model. As a result, all the quantile lines or planes get pulled toward the median, disrupting the actual data pattern and leading to incorrect interpretations.
 
 - **Quantile Crossing**:
 
-   In general , the quantiles follow the order where  25<sup>th</sup> percentile line stays below the 50<sup>th</sup> percentile and 75<sup>th</sup>  percentile line stays above 50<sup>th</sup>  percentile , but sometimes these lines cross each other and the order changes . 25<sup>th</sup> percentile line can shift above 50<sup>th</sup> percentile line . This is called as Quantile Crossing.This breaks the logic and Quantile crossing usually happens when the model is too simple, it has high noise or overlapping data and also when the data is trained independently and they have no connection with other quantiles.
+   In general, quantiles follow an order where the 25<sup>th</sup> percentile line stays below the 50<sup>th</sup> percentile, and the 75<sup>th</sup> percentile line stays above the 50<sup>th</sup> percentile. However, sometimes these lines cross each other, and the order changes. For example, the 25<sup>th</sup> percentile line can shift above the 50<sup>th</sup> percentile line. This is called Quantile Crossing.
+Quantile crossing breaks the logical order of quantiles and usually occurs when the model is too simple, the data has high noise or overlap, or when each quantile model is trained independently without any connection between them.
 
 - **Convergence Problems**:
-   This problem mainly occurs when data makes it hard for the algorithm to find stable ,accurate solution. When I say , data makes it hard, it can be due to multiple reasons.
-   
-   some of them are:
+   This problem mainly occurs when the data makes it difficult for the algorithm to find a stable and accurate solution. When I say the data makes it hard, it can be due to several reasons.
+    
+  Some of them are:
 
-   - Dataset is small and doesn't have enough variation. Estimating Extreme quantiles when there are few data points makes it harder for the algorithm to converge.  
+   - The dataset is small and lacks enough variation. Estimating extreme quantiles with only a few data points makes it harder for the algorithm to converge.
 
-   - Multicollinearity ,it results in unstable coefficient estimates and makes it harder for the model to find accurate solutions
+   - Multicollinearity results in unstable coefficient estimates and makes it harder for the model to find accurate solutions.
 
    
 
@@ -229,22 +234,21 @@ For a well calibrated model:$$\text{Coverage}(w) \approx w$$
 
 -  **Requires Large sample size**:
 
-    Because Quantile Regression estimates quantiles ranging from low to very high percentiles, we need large sample size for getting a reliable output. Smaller datasets have fewer data points at the tails which increases uncertainty.
+    Because Quantile Regression estimates quantiles ranging from low to very high percentiles, we need a large sample size to obtain reliable results. Smaller datasets have fewer data points in the tails, which increases uncertainty.
 
 -   **Computational complexity**:
 
-    Quantile regression is computationally complex because it needs to solve each quantile through repeated calculations , which makes it slower and harder to scale for large datasets.
+    Quantile regression is computationally complex because it needs to solve each quantile through repeated calculations, which makes it slower and harder to scale for large datasets.
 
 -  **Inefficiency in High-Dimensional settings**:
 
-   Quantile regression may become inefficient when dealing with very High dimensional predictor spaces. without any appropriate regularization techniques , the model will be complicated.
+   Quantile regression may become inefficient when dealing with very high-dimensional predictor spaces. Without appropriate regularization techniques, the model can become overly complex.
 
 
 ## Topic Extension
 
-Let’s bridge everything and look beyond. 
-
-Ordinary Least Squares minimized the average squared error to produces a single point estimate of $\hat{\beta}$. Since $\hat{y}$ is there’s no room for uncertainty. 
+Let’s bring everything together and look beyond.
+Ordinary Least Squares minimizes the average squared error to produce a single point estimate of $\hat{\beta}$. Since $\hat{y}$ is fixed, there’s no room for uncertainty.
 
 For our insurance data:
 OLS: 
@@ -257,9 +261,8 @@ Quantile Regression minimized a weighted absolute error. Each $\tau$ gives us on
 
 Quantile Regression:
 
-High cost patients in 90<sup>th</sup> quantile for instance, BMI has a stronger effect. And now we are upgraded from one line trend to have the quantile estimate( e.g 25%, 75%).
-
-Since both OLS and Quantile Regression are deterministic, meaning that we will always get the same estimates even adding new data. So still, we don’t know how uncertain we are. The magic with Bayesian Quantile Regression is that it turns deterministic to probabilistic. It says “since we don’t know about the true $\beta$. We should treat beta as a random variable!” This is where the introducing our belief part comes into play. And it also allows us to update our belief after getting more evidences.
+For high-cost patients in the 90<sup>th</sup> quantile, BMI has a stronger effect. At this point, we’ve moved beyond a single trend line to include multiple quantile estimates (for example, the 25% and 75% levels).
+Both OLS and Quantile Regression are deterministic, meaning they always produce the same estimates even when new data is added. This means we still don’t know how uncertain our estimates are. The magic of Bayesian Quantile Regression is that it transforms a deterministic process into a probabilistic one. It says, “Since we don’t know the true value of $\beta$, we should treat $\beta$ as a random variable!” This is where introducing our prior beliefs comes into play — and it also allows us to update those beliefs as we obtain more evidence.
 
 
 Bayesian Quantile Regression:
@@ -287,18 +290,17 @@ Let’s wrap this up by thinking about the comparison. Quantile Regression expan
 Bayesian Quantile Regression allows us to include prior or you can say domain knowledge. When combining prior with observed data, our prior updated to posterior.  Bayesian Quantile Regression balances our prior belief with empirical evidence. At this stage, the result captures distributional difference across quantile. The uncertainty captured through posterior variance. We are finally gaining our confidence and the model interpretability. And this is the magic with Bayesian Quantile Regression.
 ## Conclusion
 
-Whoaa ! Finally ! I know it's too much information but hey we learnt something new in depth . 
+Whoa! Finally! We know it’s a lot of information, but hey, we learned something new in depth!
 
-We learnt,
+Here’s what we learned:
 
-Quantile regression lets us see beyond the traditional linear regression. From our insurance dataset, smoking amplifies costs drastically which means impact of smoking is not uniform, it becomes severe which Multiple linear regression completely misses. Quantile Regression works even when data is skewed , has outliers . It takes care of heteroskedasticity .However it's not perfect and we saw why ?
+Quantile Regression lets us see beyond traditional linear regression. From our insurance dataset, we found that smoking amplifies costs drastically. The impact of smoking isn’t uniform; it becomes more severe, which Multiple Linear Regression completely misses. Quantile Regression also works well when the data is skewed, has outliers, or shows heteroscedasticity. However, it’s not perfect, and we saw why.
 
-We had a lot of fun writing this blog , researching about it . They say “What speaks to you , sticks to you “ . This Definitely stuck with us , hope it does the same to youu 
+We had a lot of fun writing this blog and researching the topic. They say, “What speaks to you, sticks to you.” This definitely stuck with us, and we hope it does the same for you.
 
-Thankyou for your time and patience
+Thank you for your time and patience.
 
-We’d love to know your thoughts  and if you’d like to chat more or nerd out on data, hit us up on LinkedIn!
-
+We’d love to hear your thoughts, and if you’d like to chat more or nerd out about data, feel free to reach out to us on LinkedIn!
  [Sai Sri Maddirala](https://www.linkedin.com/in/sai-sri-maddirala/) | [Jianing (Ari) Li](https://www.linkedin.com/in/jianing-ari-li-5a9332353/) | [Yancy Castro](https://www.linkedin.com/in/yacastrob/)
 
 
